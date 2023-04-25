@@ -294,6 +294,7 @@ section a{
     border: none;
     z-index: 10;
     transition: all 0.25s;
+    display: none;
 }
 
 .hamburger-top,
@@ -303,7 +304,7 @@ section a{
     top: 0;
     left: 0;
     width: 24px;
-    height: 24px;
+    height: 2px;
     background: #000;
     transform: rotate(0);
     transition: all 0.5s;
@@ -317,6 +318,22 @@ section a{
 
 .hamburger-bottom {
     transform: translateY(14px);
+}
+
+.open .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+
+
+.open .hamburger-middle {
+    display: none;
+}
+
+
+
+.open .hamburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translateX(-6px);
 }
 
 @media(max-width: 960px) {
@@ -334,6 +351,11 @@ section a{
 }
 
 @media(max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+
     .grid-col-2 {
         grid-template-columns: 1fr;
     }
